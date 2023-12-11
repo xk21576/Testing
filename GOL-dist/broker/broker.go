@@ -64,7 +64,7 @@ func kill() {
 }
 func keyPressesAndTicker(keyPress string) ([][]byte, int) {
 	workerAddr := []string{
-		"54.221.14.115:8040", "54.221.14.115:8041",
+		"54.88.77.118:8040", "54.88.77.118:8041",
 	}
 	var TurnCh = make(chan int)
 	var WorldCh = make(chan [][]byte)
@@ -130,7 +130,7 @@ func SendKeyPress(client *rpc.Client, keyPress string, TurnCh chan int) {
 
 func ExecuteTurns(p stubs.Param, world [][]byte) ([][]byte, int) {
 	workerAddr := []string{
-		"54.221.14.115:8040", "54.221.14.115:8041",
+		"54.88.77.118:8040", "54.88.77.118:8041",
 	}
 	var Workers = make(chan WorkerWorld)
 	var TurnCh = make(chan int)
