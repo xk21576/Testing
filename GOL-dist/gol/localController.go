@@ -137,7 +137,7 @@ func distributor(p Params, c distributorChannels, keyPresses <-chan rune) {
 	endTicking := false
 	go keyPressTicker(keyPresses, c, &endTicking, fileName)
 
-	server := "127.0.0.1:8030"
+	server := "54.221.14.115:8030"
 	client, _ := rpc.Dial("tcp", server)
 	makeCall(client, world, pa, c, fileName)
 	defer client.Close()

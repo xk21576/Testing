@@ -55,7 +55,7 @@ func ExecuteTurns(p stubs.Param, world [][]byte) ([][]byte, int) {
 	return world, turn
 }*/
 
-//------------------------------------------------------------------------
+// ------------------------------------------------------------------------
 func kill() {
 	select {
 	case <-time.After(2 * time.Second):
@@ -64,7 +64,7 @@ func kill() {
 }
 func keyPressesAndTicker(keyPress string) ([][]byte, int) {
 	workerAddr := []string{
-		"127.0.0.1:8040", "127.0.0.1:8041",
+		"54.221.14.115:8040", "54.221.14.115:8041",
 	}
 	var TurnCh = make(chan int)
 	var WorldCh = make(chan [][]byte)
@@ -130,7 +130,7 @@ func SendKeyPress(client *rpc.Client, keyPress string, TurnCh chan int) {
 
 func ExecuteTurns(p stubs.Param, world [][]byte) ([][]byte, int) {
 	workerAddr := []string{
-		"127.0.0.1:8040", "127.0.0.1:8041",
+		"54.221.14.115:8040", "54.221.14.115:8041",
 	}
 	var Workers = make(chan WorkerWorld)
 	var TurnCh = make(chan int)
@@ -212,7 +212,7 @@ func (s *GolOperations) KeyTicker(keyPress stubs.KeyTickerInput, res *stubs.Resp
 	return
 }
 
-//----------------------
+// ----------------------
 type GolOperations struct{}
 
 func (s *GolOperations) Execute(req stubs.Request, res *stubs.Response) (err error) {
